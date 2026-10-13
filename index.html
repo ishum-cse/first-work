@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroPredict - Crop Price Forecaster</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌾 AgroPredict</h1>
+            <p>Smart Future Crop Price Forecasting for Farmers</p>
+        </header>
+
+        <main>
+            <!-- Input Form Section -->
+            <section class="form-section">
+                <h2>Predict Future Market Rates</h2>
+                <form id="predictionForm">
+                    <div class="form-group">
+                        <label for="cropSelect">Select Crop:</label>
+                        <select id="cropSelect" required>
+                            <option value="" disabled selected>Choose a crop</option>
+                            <option value="Wheat">Wheat (Kanak)</option>
+                            <option value="Rice">Paddy / Rice</option>
+                            <option value="Maize">Maize (Corn)</option>
+                            <option value="Cotton">Cotton</option>
+                            <option value="Potato">Potato</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="seasonSelect">Target Forecast Season:</label>
+                        <select id="seasonSelect" required>
+                            <option value="" disabled selected>Choose target season</option>
+                            <option value="Rabi">Rabi (Winter)</option>
+                            <option value="Kharif">Kharif (Monsoon)</option>
+                            <option value="Zaid">Zaid (Summer)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="marketSelect">Target Region / Market:</label>
+                        <select id="marketSelect" required>
+                            <option value="" disabled selected>Choose market region</option>
+                            <option value="North">Northern Zone (High Demand)</option>
+                            <option value="South">Southern Zone (Stable)</option>
+                            <option value="East">Eastern Zone (Rain-dependent)</option>
+                            <option value="West">Western Zone (Arid/Commercial)</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn-predict">Analyze & Forecast Price</button>
+                </form>
+            </section>
+
+            <!-- Results Section Layout -->
+            <section id="resultsSection" class="results-section hidden">
+                <h2>🔮 AI Market Forecast Report</h2>
+                <div class="results-grid">
+                    <div class="result-card current">
+                        <h3>Current Avg Price</h3>
+                        <p id="currentPrice">₹0.00 / quintal</p>
+                    </div>
+                    <div class="result-card predicted">
+                        <h3>Predicted Future Price</h3>
+                        <p id="predictedPrice">₹0.00 / quintal</p>
+                    </div>
+                    <div class="result-card trend">
+                        <h3>Market Outlook</h3>
+                        <p id="marketTrend">—</p>
+                    </div>
+                </div>
+                <div class="advice-box">
+                    <strong>💡 Smart Advice:</strong> <span id="farmerAdvice"></span>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
